@@ -1,0 +1,11 @@
+schema {
+  query: Query
+}
+
+type UserScopeValidationResponse {
+  valid: Boolean!
+}
+
+type Query {
+  validateUserScope(user: ID!, scope: String!): UserScopeValidationResponse!
+}
