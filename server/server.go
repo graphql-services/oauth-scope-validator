@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/99designs/gqlgen/handler"
-	oauth_user_scope_validator "github.com/graphql-services/oauth-user-scope-validator"
+	oauth_user_scope_validator "github.com/graphql-services/oauth-scope-validator"
 )
 
 const defaultPort = "80"
