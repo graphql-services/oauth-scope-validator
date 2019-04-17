@@ -268,7 +268,7 @@ func (ec *executionContext) _Query_validateUserScope(ctx context.Context, field 
 	res := resTmp.(*UserScopeValidationResponse)
 	rctx.Result = res
 	ctx = ec.Tracer.StartFieldChildExecution(ctx)
-	return ec.marshalNUserScopeValidationResponse2ᚖgithubᚗcomᚋgraphqlᚑservicesᚋoauthᚑuserᚑscopeᚑvalidatorᚐUserScopeValidationResponse(ctx, field.Selections, res)
+	return ec.marshalNUserScopeValidationResponse2ᚖgithubᚗcomᚋgraphqlᚑservicesᚋoauthᚑscopeᚑvalidatorᚐUserScopeValidationResponse(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) _Query___type(ctx context.Context, field graphql.CollectedField) graphql.Marshaler {
@@ -1195,7 +1195,7 @@ func (ec *executionContext) ___Type_ofType(ctx context.Context, field graphql.Co
 var queryImplementors = []string{"Query"}
 
 func (ec *executionContext) _Query(ctx context.Context, sel ast.SelectionSet) graphql.Marshaler {
-	fields := graphql.CollectFields(ctx, sel, queryImplementors)
+	fields := graphql.CollectFields(ec.RequestContext, sel, queryImplementors)
 
 	ctx = graphql.WithResolverContext(ctx, &graphql.ResolverContext{
 		Object: "Query",
@@ -1239,7 +1239,7 @@ func (ec *executionContext) _Query(ctx context.Context, sel ast.SelectionSet) gr
 var userScopeValidationResponseImplementors = []string{"UserScopeValidationResponse"}
 
 func (ec *executionContext) _UserScopeValidationResponse(ctx context.Context, sel ast.SelectionSet, obj *UserScopeValidationResponse) graphql.Marshaler {
-	fields := graphql.CollectFields(ctx, sel, userScopeValidationResponseImplementors)
+	fields := graphql.CollectFields(ec.RequestContext, sel, userScopeValidationResponseImplementors)
 
 	out := graphql.NewFieldSet(fields)
 	invalid := false
@@ -1266,7 +1266,7 @@ func (ec *executionContext) _UserScopeValidationResponse(ctx context.Context, se
 var __DirectiveImplementors = []string{"__Directive"}
 
 func (ec *executionContext) ___Directive(ctx context.Context, sel ast.SelectionSet, obj *introspection.Directive) graphql.Marshaler {
-	fields := graphql.CollectFields(ctx, sel, __DirectiveImplementors)
+	fields := graphql.CollectFields(ec.RequestContext, sel, __DirectiveImplementors)
 
 	out := graphql.NewFieldSet(fields)
 	invalid := false
@@ -1305,7 +1305,7 @@ func (ec *executionContext) ___Directive(ctx context.Context, sel ast.SelectionS
 var __EnumValueImplementors = []string{"__EnumValue"}
 
 func (ec *executionContext) ___EnumValue(ctx context.Context, sel ast.SelectionSet, obj *introspection.EnumValue) graphql.Marshaler {
-	fields := graphql.CollectFields(ctx, sel, __EnumValueImplementors)
+	fields := graphql.CollectFields(ec.RequestContext, sel, __EnumValueImplementors)
 
 	out := graphql.NewFieldSet(fields)
 	invalid := false
@@ -1341,7 +1341,7 @@ func (ec *executionContext) ___EnumValue(ctx context.Context, sel ast.SelectionS
 var __FieldImplementors = []string{"__Field"}
 
 func (ec *executionContext) ___Field(ctx context.Context, sel ast.SelectionSet, obj *introspection.Field) graphql.Marshaler {
-	fields := graphql.CollectFields(ctx, sel, __FieldImplementors)
+	fields := graphql.CollectFields(ec.RequestContext, sel, __FieldImplementors)
 
 	out := graphql.NewFieldSet(fields)
 	invalid := false
@@ -1387,7 +1387,7 @@ func (ec *executionContext) ___Field(ctx context.Context, sel ast.SelectionSet, 
 var __InputValueImplementors = []string{"__InputValue"}
 
 func (ec *executionContext) ___InputValue(ctx context.Context, sel ast.SelectionSet, obj *introspection.InputValue) graphql.Marshaler {
-	fields := graphql.CollectFields(ctx, sel, __InputValueImplementors)
+	fields := graphql.CollectFields(ec.RequestContext, sel, __InputValueImplementors)
 
 	out := graphql.NewFieldSet(fields)
 	invalid := false
@@ -1423,7 +1423,7 @@ func (ec *executionContext) ___InputValue(ctx context.Context, sel ast.Selection
 var __SchemaImplementors = []string{"__Schema"}
 
 func (ec *executionContext) ___Schema(ctx context.Context, sel ast.SelectionSet, obj *introspection.Schema) graphql.Marshaler {
-	fields := graphql.CollectFields(ctx, sel, __SchemaImplementors)
+	fields := graphql.CollectFields(ec.RequestContext, sel, __SchemaImplementors)
 
 	out := graphql.NewFieldSet(fields)
 	invalid := false
@@ -1464,7 +1464,7 @@ func (ec *executionContext) ___Schema(ctx context.Context, sel ast.SelectionSet,
 var __TypeImplementors = []string{"__Type"}
 
 func (ec *executionContext) ___Type(ctx context.Context, sel ast.SelectionSet, obj *introspection.Type) graphql.Marshaler {
-	fields := graphql.CollectFields(ctx, sel, __TypeImplementors)
+	fields := graphql.CollectFields(ec.RequestContext, sel, __TypeImplementors)
 
 	out := graphql.NewFieldSet(fields)
 	invalid := false
@@ -1532,11 +1532,11 @@ func (ec *executionContext) marshalNString2string(ctx context.Context, sel ast.S
 	return graphql.MarshalString(v)
 }
 
-func (ec *executionContext) marshalNUserScopeValidationResponse2githubᚗcomᚋgraphqlᚑservicesᚋoauthᚑuserᚑscopeᚑvalidatorᚐUserScopeValidationResponse(ctx context.Context, sel ast.SelectionSet, v UserScopeValidationResponse) graphql.Marshaler {
+func (ec *executionContext) marshalNUserScopeValidationResponse2githubᚗcomᚋgraphqlᚑservicesᚋoauthᚑscopeᚑvalidatorᚐUserScopeValidationResponse(ctx context.Context, sel ast.SelectionSet, v UserScopeValidationResponse) graphql.Marshaler {
 	return ec._UserScopeValidationResponse(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNUserScopeValidationResponse2ᚖgithubᚗcomᚋgraphqlᚑservicesᚋoauthᚑuserᚑscopeᚑvalidatorᚐUserScopeValidationResponse(ctx context.Context, sel ast.SelectionSet, v *UserScopeValidationResponse) graphql.Marshaler {
+func (ec *executionContext) marshalNUserScopeValidationResponse2ᚖgithubᚗcomᚋgraphqlᚑservicesᚋoauthᚑscopeᚑvalidatorᚐUserScopeValidationResponse(ctx context.Context, sel ast.SelectionSet, v *UserScopeValidationResponse) graphql.Marshaler {
 	if v == nil {
 		if !ec.HasError(graphql.GetResolverContext(ctx)) {
 			ec.Errorf(ctx, "must not be null")
