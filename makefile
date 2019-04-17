@@ -1,5 +1,5 @@
 OWNER=graphql
-IMAGE_NAME=oauth-user-scope-validator
+IMAGE_NAME=oauth-scope-validator
 QNAME=$(OWNER)/$(IMAGE_NAME)
 
 GIT_TAG=$(QNAME):$(TRAVIS_COMMIT)
