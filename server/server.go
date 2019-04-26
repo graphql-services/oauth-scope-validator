@@ -21,8 +21,8 @@ func main() {
 	http.Handle("/graphql", handler.GraphQL(oauth_user_scope_validator.NewExecutableSchema(oauth_user_scope_validator.Config{Resolvers: &oauth_user_scope_validator.Resolver{}})))
 
 	http.HandleFunc("/healthcheck", func(res http.ResponseWriter, req *http.Request) {
-		res.Write([]byte("OK"))
 		res.WriteHeader(200)
+		res.Write([]byte("OK"))
 	})
 
 	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
