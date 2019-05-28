@@ -32,15 +32,15 @@ generate:
 
 build-local:
 	# go get ./...
-	# go build -o $(IMAGE_NAME) ./server/server.go
-	go build -o $(IMAGE_NAME) ./server/server.go
+	# go build -o $(IMAGE_NAME) ./main.go
+	go build -o $(IMAGE_NAME) ./main.go
 
 deploy-local:
 	make build-local
 	mv $(IMAGE_NAME) /usr/local/bin/
 
 run:
-	PORT=8080 go run server/server.go
+	PORT=8080 go run main.go
 
 # test:
 # 	DATABASE_URL=sqlite3://test.db $(IMAGE_NAME) server -p 8005
