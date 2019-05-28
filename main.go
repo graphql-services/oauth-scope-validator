@@ -14,6 +14,7 @@ import (
 type server struct{}
 
 func (s *server) Validate(ctx context.Context, req *pb.ValidateRequest) (*pb.ValidateResponse, error) {
+	log.Printf("request for user: %s, scopes: %s\n", req.UserID, req.Scopes)
 	return &pb.ValidateResponse{Valid: true, Scopes: req.Scopes}, nil
 }
 
